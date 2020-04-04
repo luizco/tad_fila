@@ -14,8 +14,20 @@ Fila* inicializa(){
 
 }
 
+int vazia( Fila* fila){
+
+	return(fila->primeiro == fila->ultimo);
+}
+
 void insereIten( Fila** fila, int valor){
 
+	Celula *reg;
+	reg = (Celula*)malloc(sizeof(Celula));
+	reg->valor = valor;
+	reg->prox = NULL;
+
+	(*fila)->ultimo->prox = reg;
+	(*fila)->ultimo = reg;
 }
 
 void removeIten( Fila* fila, int valor){
@@ -23,9 +35,24 @@ void removeIten( Fila* fila, int valor){
 }
 
 void imprime( Fila *fila){
+	Celula *p;
+
+		for (p = fila->primeiro->prox ; p != NULL; p = p->prox) {
+
+			printf("%d \n", p->valor);
+		}
 
 }
 
 void libera(Fila **fila){
+	Celula *p, *temp;
 
+		p = (*fila)->primeiro;
+		while (p != NULL) {
+			temp = p;
+			p = p->prox;
+			free(temp);
+		}
+
+		free(*fila);
 }

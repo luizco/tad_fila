@@ -14,6 +14,8 @@ typedef struct{
 
 Fila* inicializa(void);
 
+int vazia(Fila* fila);
+
 void insereIten( Fila** fila, int valor);
 
 void removeIten( Fila* fila, int valor);

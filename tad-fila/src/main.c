@@ -5,6 +5,11 @@
 int main(void) {
 
 	Fila *fila = inicializa();
+	insereIten(&fila,2);
+	insereIten(&fila,3);
+	insereIten(&fila,4);
+	insereIten(&fila,5);
 
-	printf("teste %d \n",fila->primeiro->valor);
+	imprime(fila);
+	libera(&fila);
 }
