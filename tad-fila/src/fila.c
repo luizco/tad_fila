@@ -30,7 +30,14 @@ void insereIten( Fila** fila, int valor){
 	(*fila)->ultimo = reg;
 }
 
-void removeIten( Fila* fila, int valor){
+void removeIten( Fila* fila){
+
+	Celula *temp;
+
+	temp = fila->primeiro->prox;
+	fila->primeiro->prox = fila->primeiro->prox->prox;
+
+	free(temp);
 
 }
 

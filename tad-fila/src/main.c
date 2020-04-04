@@ -9,7 +9,9 @@ int main(void) {
 	insereIten(&fila,3);
 	insereIten(&fila,4);
 	insereIten(&fila,5);
-
+	imprime(fila);
+	printf("removendo \n");
+	removeIten(fila);
 	imprime(fila);
 	libera(&fila);
 }
